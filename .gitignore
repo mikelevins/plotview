@@ -1,0 +1,11 @@
+# Developer tools' files
+.lite_workspace.lua
+
+# Neutralinojs binaries and builds
+/dist
+
+# Neutralinojs related files
+.storage
+*.log
+.tmp
+cliocl.exe
