@@ -1,14 +1,14 @@
 ;;;; ***********************************************************************
 ;;;; 
 ;;;; Name:          browser.lisp
-;;;; Project:       plotview
+;;;; Project:       clio
 ;;;; Purpose:       controlling the browser process
 ;;;; Author:        mikel evins
 ;;;; Copyright:     2021 by mikel evins
 ;;;;
 ;;;; ***********************************************************************
 
-(in-package :plotview)
+(in-package :clio)
 
 (defun open-browser (&key (port 8000))
   (let ((args (list (format nil "--app=http://localhost:~A" port))))

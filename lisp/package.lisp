@@ -1,4 +1,4 @@
 ;;;; package.lisp
 
-(defpackage #:plotview
+(defpackage #:clio
   (:use #:cl #:cl-who))

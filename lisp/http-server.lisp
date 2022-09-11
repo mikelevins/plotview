@@ -1,14 +1,14 @@
 ;;;; ***********************************************************************
 ;;;; 
 ;;;; Name:          http-server.lisp
-;;;; Project:       plotview
+;;;; Project:       clio
 ;;;; Purpose:       http and websocket servers
 ;;;; Author:        mikel evins
 ;;;; Copyright:     2021 by mikel evins
 ;;;;
 ;;;; ***********************************************************************
 
-(in-package #:plotview)
+(in-package #:clio)
 
 (defun start-server (port)
   (setf *http-server* (make-instance 'hunchentoot:easy-acceptor :port port :document-root (http-document-root)))

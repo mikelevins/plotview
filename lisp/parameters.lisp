@@ -1,14 +1,14 @@
 ;;;; ***********************************************************************
 ;;;; 
 ;;;; Name:          parameters.lisp
-;;;; Project:       plotview
+;;;; Project:       clio
 ;;;; Purpose:       global parameters
 ;;;; Author:        mikel evins
 ;;;; Copyright:     2022 by mikel evins
 ;;;;
 ;;;; ***********************************************************************
 
-(in-package #:plotview)
+(in-package #:clio)
 
 (defparameter *http-server* nil)
 (defparameter *http-server-port* 20202)
@@ -21,4 +21,4 @@
 
 (defun http-document-root ()
   "find the document root for the HTTP server"
-  (asdf:system-relative-pathname :plotview "resources/"))
+  (asdf:system-relative-pathname :cliocl "resources/"))

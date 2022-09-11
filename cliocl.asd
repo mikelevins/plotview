@@ -1,15 +1,15 @@
 ;;;; ***********************************************************************
 ;;;;
-;;;; Name:          plotview.asd
-;;;; Project:       the plotview plotting UI for SBCL
+;;;; Name:          cliocl.asd
+;;;; Project:       the clio Common Lisp development environment
 ;;;; Purpose:       system definition
 ;;;; Author:        mikel evins
-;;;; Copyright:     2022 by mikel evins
+;;;; Copyright:     2021-2022 by mikel evins
 ;;;;
 ;;;; ***********************************************************************
 
 ;;; ---------------------------------------------------------------------
-;;; plotview
+;;; cliocl
 ;;; ---------------------------------------------------------------------
 ;;; NOTE: use sbcl 2.2.3 on Windows 64; later versions are unable to
 ;;; load usocket or other quicklisp libraries due to package-lock and
@@ -21,11 +21,11 @@
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (pushnew :HUNCHENTOOT-NO-SSL *features*))
 
-(asdf:defsystem #:plotview
-  :description "Plotview: an HTML plotting UI for SBCL"
+(asdf:defsystem #:cliocl
+  :description "Clio: a Lisp development environment with HTML5 UI support"
   :author "mikel evins <mikel@evins.net>"
   :license  "MIT"
-  :version "0.0.1"
+  :version "0.6.3"
   :depends-on (:hunchentoot :trivial-ws :parenscript :st-json :cl-who :lass :find-port)
   :serial t
   :components ((:module "lisp"
@@ -38,12 +38,12 @@
                              (:file "ui")
                              (:file "routes")))))
 
-#+nil (asdf:load-system :plotview)
+#+nil (asdf:load-system :cliocl)
 
-#+nil (plotview::start-server plotview::*http-server-port*)
-#+nil (plotview::runapp :port plotview::*neutralino-application-port* :mode "chrome")
-#+nil (plotview::runapp :port plotview::*neutralino-application-port* :mode "window")
+#+nil (clio::start-server clio::*http-server-port*)
+#+nil (clio::runapp :port clio::*neutralino-application-port* :mode "chrome")
+#+nil (clio::runapp :port clio::*neutralino-application-port* :mode "window")
 ;;; now open the devtools window in the running app, then send a message to it:
-#+nil (trivial-ws:send (first (trivial-ws:clients plotview::*websocket-server*)) "{\"name\": \"Goodbye!\"}")
+#+nil (trivial-ws:send (first (trivial-ws:clients clio::*websocket-server*)) "{\"name\": \"Goodbye!\"}")
 
-#+nil (plotview::stop-server)
+#+nil (clio::stop-server)

@@ -1,24 +1,24 @@
 ;;;; ***********************************************************************
 ;;;; 
 ;;;; Name:          app.lisp
-;;;; Project:       plotview
+;;;; Project:       clio
 ;;;; Purpose:       code to launch the neutralino binary with appropriate arguments
 ;;;; Author:        mikel evins
 ;;;; Copyright:     2021 by mikel evins
 ;;;;
 ;;;; ***********************************************************************
 
-(in-package :plotview)
+(in-package :clio)
 
-(defun plotview-root ()(asdf:system-relative-pathname :plotview ""))
+(defun clio-root ()(asdf:system-relative-pathname :cliocl ""))
 
 (defun neutralino-path ()
   #+(or macos darwin)
-  (asdf:system-relative-pathname :plotview "bin/neutralino-mac_x64")
+  (asdf:system-relative-pathname :cliocl "bin/neutralino-mac_x64")
   #+(or win32 mswindows windows)
-  (asdf:system-relative-pathname :plotview "bin/neutralino-win_x64.exe")
+  (asdf:system-relative-pathname :cliocl "bin/neutralino-win_x64.exe")
   #+linux
-  (asdf:system-relative-pathname :plotview "bin/neutralino-linux_x64"))
+  (asdf:system-relative-pathname :cliocl "bin/neutralino-linux_x64"))
 
 ;;; see https://neutralino.js.org/docs/cli/internal-cli-arguments/
 ;;; for documentation of the neutralinojs internal CLI arguments
@@ -27,9 +27,9 @@
                              (mode "chrome") ; chrome | window | browser | cloud
                              (port *neutralino-application-port*))
   (list "--load-dir-res"
-        "--window-title=plotview"
+        "--window-title=clio"
         "--enable-extensions=true"
-        (format nil "--path=~A" (namestring (plotview-root)))
+        (format nil "--path=~A" (namestring (clio-root)))
         (format nil "--port=~A" port)
         (format nil "--mode=~A" mode)))
 
