@@ -1,15 +1,15 @@
 ;;;; ***********************************************************************
 ;;;;
-;;;; Name:          cliocl.asd
-;;;; Project:       the clio Common Lisp development environment
+;;;; Name:          plotview.asd
+;;;; Project:       a plotting UI for sbcl
 ;;;; Purpose:       system definition
 ;;;; Author:        mikel evins
-;;;; Copyright:     2021-2022 by mikel evins
+;;;; Copyright:     2022 by mikel evins
 ;;;;
 ;;;; ***********************************************************************
 
 ;;; ---------------------------------------------------------------------
-;;; cliocl
+;;; plotview
 ;;; ---------------------------------------------------------------------
 ;;; NOTE: use sbcl 2.2.3 on Windows 64; later versions are unable to
 ;;; load usocket or other quicklisp libraries due to package-lock and
@@ -21,7 +21,7 @@
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (pushnew :HUNCHENTOOT-NO-SSL *features*))
 
-(asdf:defsystem #:cliocl
+(asdf:defsystem #:plotview
   :description "Clio: a Lisp development environment with HTML5 UI support"
   :author "mikel evins <mikel@evins.net>"
   :license  "MIT"
@@ -38,7 +38,7 @@
                              (:file "ui")
                              (:file "routes")))))
 
-#+nil (asdf:load-system :cliocl)
+#+nil (asdf:load-system :plotview)
 
 #+nil (clio::start-server clio::*http-server-port*)
 #+nil (clio::runapp :port clio::*neutralino-application-port* :mode "chrome")

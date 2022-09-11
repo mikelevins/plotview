@@ -21,4 +21,4 @@
 
 (defun http-document-root ()
   "find the document root for the HTTP server"
-  (asdf:system-relative-pathname :cliocl "resources/"))
+  (asdf:system-relative-pathname :plotview "resources/"))

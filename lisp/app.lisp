@@ -10,15 +10,15 @@
 
 (in-package :clio)
 
-(defun clio-root ()(asdf:system-relative-pathname :cliocl ""))
+(defun clio-root ()(asdf:system-relative-pathname :plotview ""))
 
 (defun neutralino-path ()
   #+(or macos darwin)
-  (asdf:system-relative-pathname :cliocl "bin/neutralino-mac_x64")
+  (asdf:system-relative-pathname :plotview "bin/neutralino-mac_x64")
   #+(or win32 mswindows windows)
-  (asdf:system-relative-pathname :cliocl "bin/neutralino-win_x64.exe")
+  (asdf:system-relative-pathname :plotview "bin/neutralino-win_x64.exe")
   #+linux
-  (asdf:system-relative-pathname :cliocl "bin/neutralino-linux_x64"))
+  (asdf:system-relative-pathname :plotview "bin/neutralino-linux_x64"))
 
 ;;; see https://neutralino.js.org/docs/cli/internal-cli-arguments/
 ;;; for documentation of the neutralinojs internal CLI arguments
