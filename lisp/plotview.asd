@@ -17,7 +17,8 @@
   :components ((:file "package")
                (:file "parameters")
                (:file "http-server")
-               (:file "routes")))
+               (:file "routes")
+               (:file "ui")))
 
 #+nil (asdf:load-system :plotview)
 #+nil (plotview::start-server plotview::*http-server-port*)
