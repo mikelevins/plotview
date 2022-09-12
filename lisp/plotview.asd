@@ -1,5 +1,12 @@
 ;;;; plotview.asd
 
+;;; make sure we load hunchentoot at the start with
+;;; :hunchentoot-no-ssl on *features*, so that we don't run into
+;;; problems loading cl+ssl
+(eval-when (:compile-toplevel :load-toplevel :execute)
+  (pushnew :HUNCHENTOOT-NO-SSL *features*))
+
+
 (asdf:defsystem #:plotview
   :description "Describe plotview here"
   :author "Your Name <your.name@example.com>"
@@ -14,3 +21,4 @@
 #+nil (asdf:load-system :plotview)
 #+nil (plotview::start-server plotview::*http-server-port*)
 #+nil (plotview::stop-server)
+#+nil (uiop:run-program (namestring (asdf:system-relative-pathname :plotview "../webview/plotview.exe")))
