@@ -16,9 +16,11 @@
   :depends-on (:hunchentoot :trivial-ws :parenscript :st-json :cl-who :lass :find-port)
   :components ((:file "package")
                (:file "parameters")
-               (:file "http-server")))
+               (:file "http-server")
+               (:file "routes")))
 
 #+nil (asdf:load-system :plotview)
 #+nil (plotview::start-server plotview::*http-server-port*)
 #+nil (plotview::stop-server)
 #+nil (uiop:run-program (namestring (asdf:system-relative-pathname :plotview "../webview/plotview.exe")))
+#+nil (uiop:run-program (namestring (asdf:system-relative-pathname :plotview "../webview/plotview")))
