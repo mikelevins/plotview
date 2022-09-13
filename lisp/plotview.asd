@@ -13,7 +13,7 @@
   :license  "Specify license here"
   :version "0.0.1"
   :serial t
-  :depends-on (:hunchentoot :trivial-ws :parenscript :yason :cl-who :lass :find-port)
+  :depends-on (:hunchentoot :trivial-ws :parenscript :yason :cl-who)
   :components ((:file "package")
                (:file "parameters")
                (:file "http-server")
