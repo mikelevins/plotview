@@ -25,7 +25,7 @@
 #+nil (plotview::start-server plotview::*http-server-port*)
 #+nil (plotview::stop-server)
 #+nil (uiop:run-program
-       (namestring (asdf:system-relative-pathname :plotview "../webview/plotview.exe")))
+       (namestring (asdf:system-relative-pathname :plotview "../webview/win64/plotview.exe")))
 #+nil (uiop:run-program
        (namestring (asdf:system-relative-pathname :plotview "../webview/macos-intel/plotview")))
 #+nil (uiop:run-program
