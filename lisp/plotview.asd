@@ -8,9 +8,9 @@
 
 
 (asdf:defsystem #:plotview
-  :description "Describe plotview here"
-  :author "Your Name <your.name@example.com>"
-  :license  "Specify license here"
+  :description "An HTML plotting UI for sbcl"
+  :author "mikel evins <mikel@evins.net>"
+  :license  "Apache 2.0"
   :version "0.0.1"
   :serial t
   :depends-on (:hunchentoot :trivial-ws :parenscript :yason :cl-who)
