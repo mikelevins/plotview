@@ -1,1 +1,1 @@
-cl /EHsc /I include plotview.cpp /link WebView2Loader.dll.lib
+cl /EHsc /I include ../plotview.cpp /link WebView2Loader.dll.lib
