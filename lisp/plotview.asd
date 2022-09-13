@@ -18,7 +18,8 @@
                (:file "parameters")
                (:file "http-server")
                (:file "routes")
-               (:file "ui")))
+               (:file "ui")
+               (:file "drawing")))
 
 #+nil (asdf:load-system :plotview)
 #+nil (plotview::start-server plotview::*http-server-port*)
@@ -26,5 +27,5 @@
 #+nil (uiop:run-program (namestring (asdf:system-relative-pathname :plotview "../webview/plotview.exe")))
 #+nil (uiop:run-program (namestring (asdf:system-relative-pathname :plotview "../webview/plotview")))
 
-#+nil (setf $clear1 (with-output-to-string (out)(yason::encode-plist '("message" "clear-canvas") out)))
-#+nil (trivial-ws:send (first (trivial-ws:clients plotview::*websocket-server*)) $clear1)
+#+nil (plotview::draw-stroke)
+#+nil (plotview::clear-canvas)

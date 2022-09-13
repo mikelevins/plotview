@@ -18,5 +18,5 @@
 
       ;; actual contents
       (:div :class "content"
-            (:canvas :id "plotview-canvas"))))
+            (:canvas :id "plotview-canvas" :width 400 :height 400))))
     (values)))
