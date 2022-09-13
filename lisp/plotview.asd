@@ -25,3 +25,6 @@
 #+nil (plotview::stop-server)
 #+nil (uiop:run-program (namestring (asdf:system-relative-pathname :plotview "../webview/plotview.exe")))
 #+nil (uiop:run-program (namestring (asdf:system-relative-pathname :plotview "../webview/plotview")))
+
+#+nil (setf $clear1 (with-output-to-string (out)(yason::encode-plist '("message" "clear-canvas") out)))
+#+nil (trivial-ws:send (first (trivial-ws:clients plotview::*websocket-server*)) $clear1)
