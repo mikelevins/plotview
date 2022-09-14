@@ -21,9 +21,9 @@
             (:canvas :id "plotview-canvas" :width "400" :height "400")
             (:div
              (:button :id "draw-stroke-button"
-                     :onclick "drawStroke()"
-                     "Draw Stroke")
+                      :onclick "PlotviewSocket.send(JSON.stringify({\"message\": \"dodrawstroke\"}))"
+                      "Draw Stroke")
              (:button :id "clear-button"
-                     :onclick "clearCanvas()"
-                     "Clear")))))
+                      :onclick "PlotviewSocket.send(JSON.stringify({\"message\": \"doclearcanvas\"}))"
+                      "Clear")))))
     (values)))
