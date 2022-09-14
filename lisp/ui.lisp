@@ -18,5 +18,12 @@
 
       ;; actual contents
       (:div :class "content"
-            (:canvas :id "plotview-canvas" :width 400 :height 400))))
+            (:canvas :id "plotview-canvas" :width "400" :height "400")
+            (:div
+             (:button :id "draw-stroke-button"
+                     :onclick "drawStroke()"
+                     "Draw Stroke")
+             (:button :id "clear-button"
+                     :onclick "clearCanvas()"
+                     "Clear")))))
     (values)))

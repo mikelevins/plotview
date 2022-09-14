@@ -16,7 +16,7 @@ function drawStroke(){
     let canvas = getCanvas();
     let ctx = canvas.getContext("2d");
     ctx.moveTo(0,0);
-    ctx.lineTo(100,100);
+    ctx.lineTo(canvas.width,canvas.height);
     ctx.stroke();
 }
 
