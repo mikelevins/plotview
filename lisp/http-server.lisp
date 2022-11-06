@@ -41,3 +41,5 @@
 (defun stop-server ()
   (trivial-ws:stop *websocket-handler*)
   (hunchentoot:stop *http-server*))
+
+#+nil (trivial-ws:clients plotview::*websocket-server*)
