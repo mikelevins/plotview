@@ -13,10 +13,11 @@
   :license  "Apache 2.0"
   :version "0.0.1"
   :serial t
-  :depends-on (:hunchentoot :trivial-ws :parenscript :yason :cl-who)
+  :depends-on (:hunchentoot :trivial-ws :parenscript :yason :cl-who :alexandria :alexandria+ #+nil :plot/vega)
   :components ((:file "package")
                (:file "parameters")
                (:file "http-server")
+               #+nil (:file "data-table")
                (:file "routes")
                (:file "ui")
                (:file "drawing")))
@@ -27,8 +28,10 @@
 
 #+nil (uiop:run-program
        (namestring (asdf:system-relative-pathname :plotview "../webview/win64/plotview.exe")))
+
 #+nil (uiop:run-program
        (namestring (asdf:system-relative-pathname :plotview "../webview/macos-intel/plotview")))
+
 #+nil (uiop:run-program
        (namestring (asdf:system-relative-pathname :plotview "../webview/macos-apple/plotview")))
 
