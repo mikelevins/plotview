@@ -26,13 +26,13 @@
 #+nil (plotview::stop-server)
 
 #+nil (uiop:run-program
-       (namestring (asdf:system-relative-pathname :plotview "../webview/win64/plotview.exe")))
+       (namestring (asdf:system-relative-pathname :plotview "../gui/win64/plotview.exe")))
 
 #+nil (uiop:run-program
-       (namestring (asdf:system-relative-pathname :plotview "../webview/macos-intel/plotview")))
+       (namestring (asdf:system-relative-pathname :plotview "../gui/macos-intel/plotview")))
 
 #+nil (uiop:run-program
-       (namestring (asdf:system-relative-pathname :plotview "../webview/macos-apple/plotview")))
+       (namestring (asdf:system-relative-pathname :plotview "../gui/macos-apple/plotview")))
 
 #+nil (plotview::draw-stroke)
 #+nil (plotview::clear-canvas)
