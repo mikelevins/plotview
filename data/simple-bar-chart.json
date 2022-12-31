@@ -1,0 +1,9 @@
+{
+  "data": {"url": "https://lisp-stat.dev/data/simple-bar-chart-data.json"},
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
+    "y": {"field": "b", "type": "quantitative"}
+  }
+}
