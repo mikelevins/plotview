@@ -25,13 +25,29 @@ function consoleLogMessage(messageData) {
     console.log(messageData);
 }
 
+var LastMessageValue = null;
+
+function renderSpec(spec) {
+    view = new vega.View(vega.parse(spec),{
+        renderer: 'canvas',
+        container: '#renderdiv',
+        hover: false
+    });
+}
+
 function handleMessage(messageData) {
+    LastMessageValue = messageData;
     let msg = messageData['message'];
     if (msg == 'clear-canvas') {
         clearCanvas();
     } else if (msg == "draw-stroke") {
         drawStroke();
+    } else if (msg == "plot") {
+        let spec = JSON.parse(messageData.data);
+        renderSpec(spec);
     } else {
+        console.log('unrecognized message: '+msg);
+        console.log(messageData);
     }
 }
 

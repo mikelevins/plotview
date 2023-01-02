@@ -19,7 +19,8 @@
                (:file "http-server")
                (:file "routes")
                (:file "ui")
-               (:file "drawing")))
+               (:file "drawing")
+               (:file "testdata")))
 
 #+nil (asdf:load-system :plotview)
 #+nil (plotview::start-server plotview::*http-server-port*)
@@ -36,3 +37,9 @@
 
 #+nil (plotview::draw-stroke)
 #+nil (plotview::clear-canvas)
+
+#+nil (defparameter $testpath (namestring (asdf:system-relative-pathname :plotview "../data/simple-bar-chart.json")))
+#+nil (defparameter $test-spec (plotview::read-testdata $testpath))
+
+#+nil (plotview::clear-canvas)
+#+nil (plotview::plot $test-spec)

@@ -12,12 +12,11 @@
       ;; preloaded Javascript
       (:script :src "js/htmx.min.js")
       (:script :src "js/plotview.js")
-      (:script :src "https://cdn.jsdelivr.net/npm/vega@5")
-      (:script :src "https://cdn.jsdelivr.net/npm/vega-lite@5")
-      (:script :src "https://cdn.jsdelivr.net/npm/vega-embed@6")
+      (:script :src "https://vega.github.io/vega/vega.min.js")
 
       ;; actual contents
       (:div :class "content"
+            (:div :id "renderdiv")
             (:canvas :id "plotview-canvas" :width "400" :height "400")
             (:div
              (:button :id "draw-stroke-button"
