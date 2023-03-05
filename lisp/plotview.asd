@@ -48,3 +48,12 @@
 
 #+nil (plotview::clear-canvas)
 #+nil (plotview::plot $test-spec)
+
+#|
+how to display the vegatest.html test page:
+
+1. start plotview
+2. right-click the content to open the inspector (and therefore the devtools window)
+3. execute the following Javascript at the console:
+   window.location.replace('http://localhost:20202/vegatest.html')
+|#
