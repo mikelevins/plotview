@@ -71,6 +71,8 @@ function handleMessage(messageData) {
         clearCanvas();
     } else if (msg == "draw-stroke") {
         drawStroke();
+    } else if (msg == "vega-test") {
+        window.location.replace('http://localhost:20202/vegatest.html');
     } else if (msg == "plot") {
         //        let spec = JSON.parse(messageData.data);
         //        renderSpec(spec);

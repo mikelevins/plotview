@@ -15,6 +15,11 @@
                (yason::encode-plist '("message" "draw-stroke") out))))
     (send-message msg)))
 
+(defun test-vega ()
+  (let ((msg (with-output-to-string (out)
+               (yason::encode-plist '("message" "vega-test") out))))
+    (send-message msg)))
+
 
 (defun plot (spec-json)
   (let ((msg (with-output-to-string (out)

@@ -24,7 +24,10 @@
                       "Draw Stroke")
              (:button :id "clear-button"
                       :onclick "PlotviewSocket.send(JSON.stringify({\"message\": \"doclearcanvas\"}))"
-                      "Clear")))))
+                      "Clear")
+             (:button :id "vegatest-button"
+                      :onclick "PlotviewSocket.send(JSON.stringify({\"message\": \"dovegatest\"}))"
+                      "Vega Test")))))
     (values)))
 
 (defun vegatest-page ()

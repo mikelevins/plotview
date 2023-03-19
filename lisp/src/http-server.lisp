@@ -25,6 +25,8 @@
                  (draw-stroke))
                 ((equal message-name "doclearcanvas")
                  (clear-canvas))
+                ((equal message-name "dovegatest")
+                 (test-vega))
                 (t (format t "~%Unrecognized message: ~S" msg))))
         (format t "~%Unparseable message: ~S" msg))))
 
