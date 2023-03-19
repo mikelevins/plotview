@@ -6,10 +6,8 @@
   (landing-page))
 
 
-;;;
-;;; HTTP data & spec retrieval
-;;;
-
-;;; TODO error handling
+(hunchentoot:define-easy-handler (vegatest :uri "/vegatest") ()
+  (setf (hunchentoot:content-type*) "text/html")
+  (vegatest-page))
 
 
