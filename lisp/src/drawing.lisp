@@ -20,6 +20,7 @@
                (yason::encode-plist '("message" "vega-test") out))))
     (send-message msg)))
 
+#+nil (test-vega)
 
 (defun plot (spec-json)
   (let ((msg (with-output-to-string (out)

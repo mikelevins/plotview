@@ -20,6 +20,10 @@ function drawStroke(){
     ctx.stroke();
 }
 
+function testVega(){
+    window.location.replace('http://localhost:20202/vegatest.html');
+}
+
 function consoleLogMessage(messageData) {
     console.log('Message received: ');
     console.log(messageData);
@@ -72,11 +76,7 @@ function handleMessage(messageData) {
     } else if (msg == "draw-stroke") {
         drawStroke();
     } else if (msg == "vega-test") {
-        window.location.replace('http://localhost:20202/vegatest.html');
-    } else if (msg == "plot") {
-        //        let spec = JSON.parse(messageData.data);
-        //        renderSpec(spec);
-        renderSpec(testSpec);
+        testVega();
     } else {
         console.log('unrecognized message: '+msg);
         console.log(messageData);

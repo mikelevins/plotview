@@ -43,9 +43,6 @@
 #+nil (plotview::clear-canvas)
 #+nil (first (trivial-ws:clients plotview::*websocket-server*))
 
-#+nil (defparameter $testpath (namestring (asdf:system-relative-pathname :plotview "../resources/examples/simple-bar-chart.json")))
-#+nil (defparameter $test-spec (plotview::read-testdata $testpath))
-
 #+nil (plotview::clear-canvas)
 #+nil (plotview::plot $test-spec)
 
