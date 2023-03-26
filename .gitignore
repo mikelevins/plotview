@@ -1,2 +1,3 @@
 *.log
 .tmp
+/gui/win64/webviewlisp.exe
