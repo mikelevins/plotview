@@ -21,7 +21,7 @@ function drawStroke(){
 }
 
 function testVega(){
-    window.location.replace('http://localhost:20202/vegatest.html');
+    location.replace('http://localhost:20202/vegatest');
 }
 
 function consoleLogMessage(messageData) {
