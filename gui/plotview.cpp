@@ -8,7 +8,7 @@ int main(int argc,char* argv[]) {
   webview::webview *w2 = &w;
   w.set_title("Plotview");
   w.set_size(640, 480, WEBVIEW_HINT_NONE);
-  w.navigate("http://localhost:20202");
+  w.navigate("http://127.0.0.1:20202");
   w.run();
   return 0;
 }
