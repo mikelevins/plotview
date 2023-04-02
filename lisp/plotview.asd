@@ -29,5 +29,7 @@
 #+nil (plotview::start-server plotview::*http-server-port*)
 #+nil (plotview::stop-server)
 
-#+nil (trivial-open-browser:open-browser "http://127.0.0.1:20202")
+#+nil (progn
+        #+win32 (setf trivial-open-browser::+format-string+ "start msedge ~S")
+        (trivial-open-browser:open-browser "http://127.0.0.1:20202"))
 
