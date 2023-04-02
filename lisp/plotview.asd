@@ -13,7 +13,7 @@
     :license  "Apache 2.0"
     :version "0.0.1"
     :serial t
-    :depends-on (:hunchentoot :trivial-ws :parenscript :yason :cl-who :alexandria :alexandria+)
+    :depends-on (:trivial-open-browser :hunchentoot :trivial-ws :parenscript :yason :cl-who :alexandria :alexandria+)
     :components ((:module "src"
                           :serial t
                           :components ((:file "package")
@@ -21,8 +21,7 @@
                                        (:file "http-server")
                                        (:file "routes")
                                        (:file "ui")
-                                       (:file "drawing")
-                                       (:file "testdata")))))
+                                       (:file "messaging")))))
 
 
 
@@ -30,27 +29,5 @@
 #+nil (plotview::start-server plotview::*http-server-port*)
 #+nil (plotview::stop-server)
 
-#+nil (uiop:run-program
-       (namestring (asdf:system-relative-pathname :plotview "../gui/win64/plotview.exe")))
+#+nil (trivial-open-browser:open-browser "http://127.0.0.1:20202")
 
-#+nil (uiop:run-program
-       (namestring (asdf:system-relative-pathname :plotview "../gui/macos-intel/plotview")))
-
-#+nil (uiop:run-program
-       (namestring (asdf:system-relative-pathname :plotview "../gui/macos-apple/plotview")))
-
-#+nil (plotview::draw-stroke)
-#+nil (plotview::clear-canvas)
-#+nil (first (trivial-ws:clients plotview::*websocket-server*))
-
-#+nil (plotview::clear-canvas)
-#+nil (plotview::plot $test-spec)
-
-#|
-how to display the vegatest.html test page:
-
-1. start plotview
-2. right-click the content to open the inspector (and therefore the devtools window)
-3. execute the following Javascript at the console:
-   window.location.replace('http://localhost:20202/vegatest.html')
-|#
