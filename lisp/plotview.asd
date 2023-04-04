@@ -8,20 +8,31 @@
 
 
 (asdf:defsystem #:plotview
-    :description "An HTML plotting UI for sbcl"
-    :author "mikel evins <mikel@evins.net>"
-    :license  "Apache 2.0"
-    :version "0.0.1"
-    :serial t
-    :depends-on (:trivial-open-browser :hunchentoot :trivial-ws :parenscript :yason :cl-who :alexandria :alexandria+)
-    :components ((:module "src"
-                          :serial t
-                          :components ((:file "package")
-                                       (:file "parameters")
-                                       (:file "http-server")
-                                       (:file "routes")
-                                       (:file "ui")
-                                       (:file "messaging")))))
+  :description "An HTML plotting UI for sbcl"
+  :author "mikel evins <mikel@evins.net>"
+  :license  "Apache 2.0"
+  :version "0.0.1"
+  :serial t
+  :depends-on (:trivial-open-browser
+               :hunchentoot
+               :trivial-ws
+               :parenscript
+               :yason
+               :cl-who
+               :alexandria
+               :alexandria+)
+  :components ((:module "src"
+                        :serial t
+                        :components ((:file "package")
+                                     (:file "parameters")
+                                     (:file "http-server")
+                                     (:file "routes")
+                                     (:file "ui")
+                                     (:file "messaging"))))
+  :build-operation "program-op"
+  :build-pathname "plotview"
+  :entry-point "cl-user::main"
+  )
 
 
 
