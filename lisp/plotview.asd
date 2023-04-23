@@ -29,28 +29,3 @@
 #+nil (asdf:load-system :plotview)
 #+nil (plotview::start-server plotview::*http-server-port*)
 #+nil (plotview::stop-server)
-
-#+nil (uiop:run-program
-       (namestring (asdf:system-relative-pathname :plotview "../gui/win64/plotview.exe")))
-
-#+nil (uiop:run-program
-       (namestring (asdf:system-relative-pathname :plotview "../gui/macos-intel/plotview")))
-
-#+nil (uiop:run-program
-       (namestring (asdf:system-relative-pathname :plotview "../gui/macos-apple/plotview")))
-
-#+nil (plotview::draw-stroke)
-#+nil (plotview::clear-canvas)
-#+nil (first (trivial-ws:clients plotview::*websocket-server*))
-
-#+nil (plotview::clear-canvas)
-#+nil (plotview::plot $test-spec)
-
-#|
-how to display the vegatest.html test page:
-
-1. start plotview
-2. right-click the content to open the inspector (and therefore the devtools window)
-3. execute the following Javascript at the console:
-   window.location.replace('http://localhost:20202/vegatest.html')
-|#
