@@ -1,8 +1,9 @@
 # plotview
-### _mikel evins <mikel@evins.net>_
+### _Your Name <your.name@example.com>_
 
-A browser-based plotting UI for SBCL
+This is a project to do ... something.
 
 ## License
 
-Apache 2.0
+Specify license here
+
