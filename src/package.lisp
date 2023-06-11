@@ -1,4 +1,4 @@
 ;;;; package.lisp
 
 (defpackage #:plotview
-  (:use #:cl))
+  (:use #:cl #:singleton-class))
