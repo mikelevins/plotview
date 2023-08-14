@@ -1,0 +1,31 @@
+* PPCRE
+Working with PERL regular expression can often be as fustrating as the line-noise like FORMAT directives.  Some handy tips:
+
+1. Use =ppcre:parse-string= to see a more verbose and less ambiguous
+   version of the regular expression.  For example this regex:
+   (ppcre:scan-to-strings "^/data/\\w*\\.json$" "/data/mtcars.json")
+   can be 'disassembled' with:
+
+   #+NAME: parse-string
+   #+BEGIN_SRC lisp
+   (ppcre:parse-string "^/data/\\w*\\.json$")
+   #+END_SRC
+
+   to produce:
+
+   #+NAME: parse-string
+   #+BEGIN_SRC lisp
+   (:SEQUENCE :START-ANCHOR "/data/" (:GREEDY-REPETITION 0 NIL :WORD-CHAR-CLASS)
+   #+END_SRC
+
+2. Get the matches right using =ppcre:scan-to-strings=
+
+   #+NAME: parse-string
+   #+BEGIN_SRC
+   (ppcre:scan-to-strings "^/data/([\\w\\-]*)/([\\w\\-]*)/*([\\w\\-]*)" "/data/ls-user/mtcars")
+   "/data/ls-user/mtcars"
+   ("ls-user" "mtcars" "")
+   #+END_SRC
+
+References:
+  https://stackoverflow.com/questions/53939960/matching-end-of-line-with-cl-ppcre
