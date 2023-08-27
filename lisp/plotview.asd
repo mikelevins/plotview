@@ -27,5 +27,6 @@
 
 
 #+nil (asdf:load-system :plotview)
+#+nil (ql:quickload :plotview)
 #+nil (plotview::start-server plotview::*http-server-port*)
 #+nil (plotview::stop-server)
