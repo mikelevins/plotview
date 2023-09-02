@@ -60,25 +60,39 @@
       ;; actual contents
       (:h1 "vegatest page")
       (:div :id "render")
-      (:script :type "text/javascript"
-               (str (ps
-                      (defvar vl-spec
-                        (create $schema "https://vega.github.io/schema/vega-lite/v5.json"
-                                data (create values
-                                             (array (create a "C" b 2)
-                                                    (create a "C" b 7)
-                                                    (create a "C" b 4)
-                                                    (create a "D" b 1)
-                                                    (create a "D" b 2)
-                                                    (create a "D" b 6)
-                                                    (create a "E" b 8)
-                                                    (create a "E" b 4)
-                                                    (create a "E" b 7)))
-                                mark "bar"
-                                encoding (create y (create field "a" type "nominal")
-                                                 x (create aggregate "average"
-                                                           field "b"
-                                                           type "quantitative"
-                                                           axis (create "title" "average of b")))))
-                      (vega-embed "#render" vl-spec))))))
+      (:script
+       "
+     // Assign the specification to a local variable vlSpec.
+     var vlSpec = {
+         $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+         data: {
+             values: [
+                 {a: 'C', b: 2},
+                 {a: 'C', b: 7},
+                 {a: 'C', b: 4},
+                 {a: 'D', b: 1},
+                 {a: 'D', b: 2},
+                 {a: 'D', b: 6},
+                 {a: 'E', b: 8},
+                 {a: 'E', b: 4},
+                 {a: 'E', b: 7}
+             ]
+         },
+         mark: 'bar',
+         encoding: {
+             y: {field: 'a', type: 'nominal'},
+             x: {
+                 aggregate: 'average',
+                 field: 'b',
+                 type: 'quantitative',
+                 axis: {
+                     title: 'Average of b'
+                 }
+             }
+         }
+     };
+
+     // Embed the visualization in the container with id `render`
+     vegaEmbed('#render', vlSpec);
+")))
     (values)))
