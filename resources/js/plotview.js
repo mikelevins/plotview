@@ -68,6 +68,7 @@ var testSpec = {
     }
 };
 
+var msgData;
 function handleMessage(messageData) {
     LastMessageValue = messageData;
     let msg = messageData['message'];
@@ -77,6 +78,10 @@ function handleMessage(messageData) {
         drawStroke();
     } else if (msg == "vega-test") {
         testVega();
+    } else if (msg == "plot") {
+        msgData = messageData['data'];
+        vegaEmbed('#renderdiv', JSON.parse(msgData))
+        //console.log(msgData);
     } else {
         console.log('unrecognized message: '+msg);
         console.log(messageData);
@@ -88,3 +93,5 @@ PlotviewSocket.onmessage = function (event) {
     var messageData = JSON.parse(event.data);
     handleMessage(messageData);
 }
+
+

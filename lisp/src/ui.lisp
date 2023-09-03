@@ -4,6 +4,7 @@
   (cl-who:with-html-output-to-string (out nil :prologue t)
     (:html
      (:head
+      (:meta :charset "utf-8")
       ;; disable browser caching
       (:meta :http-equiv "cache-control" :content "max-age=0")
       (:meta :http-equiv "cache-control" :content "no-cache")
@@ -11,16 +12,18 @@
       (:meta :http-equiv "expires" :content "Tue, 01 Jan 1980 11:00:00 GMT")
       (:meta :http-equiv "pragma" :content "no-cache")
       ;; end browser caching
+      (:title "Plotview")
       (:link :rel "stylesheet" :href "css/normalize.css")
       (:link :rel "stylesheet" :href "css/plotview.css")
       (:link :rel "icon":type "image/png" :href "icons/plotview-icon.png")
-      (:title "PlotView"))
-     (:body
+      (:title "PlotView")
       ;; preloaded Javascript
+      (:script :src "https://cdn.jsdelivr.net/npm/vega@5.22.1")
+      (:script :src "https://cdn.jsdelivr.net/npm/vega-lite@5.6.1")
+      (:script :src "https://cdn.jsdelivr.net/npm/vega-embed@6.21.2")
       (:script :src "js/htmx.min.js")
-      (:script :src "js/plotview.js")
-      (:script :src "https://vega.github.io/vega/vega.min.js")
-
+      (:script :src "js/plotview.js"))
+     (:body
       ;; actual contents
       (:div :class "content"
             (:div :id "renderdiv")
