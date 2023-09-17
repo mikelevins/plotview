@@ -8,25 +8,26 @@
 
 
 (asdf:defsystem #:plotview
-    :description "An HTML plotting UI for sbcl"
-    :author "mikel evins <mikel@evins.net>"
-    :license  "Apache 2.0"
-    :version "0.0.1"
-    :serial t
-    :depends-on (:hunchentoot :trivial-ws :parenscript :yason :cl-who :alexandria :alexandria+)
-    :components ((:module "src"
-                          :serial t
-                          :components ((:file "package")
-                                       (:file "parameters")
-                                       (:file "http-server")
-                                       (:file "routes")
-                                       (:file "ui")
-                                       (:file "drawing")
-                                       (:file "testdata")))))
+  :description "An HTML plotting UI for sbcl"
+  :author "mikel evins <mikel@evins.net>"
+  :license  "Apache 2.0"
+  :version "0.0.1"
+  :serial t
+  :depends-on (:hunchentoot :trivial-ws :parenscript
+                            :yason :cl-who :alexandria :alexandria+)
+  :components ((:module "src"
+                        :serial t
+                        :components ((:file "package")
+                                     (:file "parameters")
+                                     (:file "http-server")
+                                     (:file "routes")
+                                     (:file "ui")
+                                     (:file "drawing")
+                                     (:file "testdata")))))
 
 
-
-#+nil (asdf:load-system :plotview)
 #+nil (ql:quickload :plotview)
 #+nil (plotview::start-server plotview::*http-server-port*)
+#+nil (uiop:run-program "explorer http://localhost:20202/" :force-shell nil :ignore-error-status t)
+#+nil (sb-ext:run-program )
 #+nil (plotview::stop-server)
