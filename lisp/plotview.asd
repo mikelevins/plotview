@@ -28,6 +28,5 @@
 
 #+nil (ql:quickload :plotview)
 #+nil (plotview::start-server plotview::*http-server-port*)
-#+nil (uiop:run-program "explorer http://localhost:20202/" :force-shell nil :ignore-error-status t)
-#+nil (sb-ext:run-program )
+#+nil (plotview::open-plotview)
 #+nil (plotview::stop-server)

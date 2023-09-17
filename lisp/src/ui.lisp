@@ -85,3 +85,7 @@
                                                            axis (create "title" "average of b")))))
                       (vega-embed "#render" vl-spec))))))
     (values)))
+
+(defun open-plotview ()
+  #+win32 (uiop:run-program "explorer http://localhost:20202/" :force-shell nil :ignore-error-status t)
+  #+darwin (uiop:run-program "open http://localhost:20202/" :force-shell nil :ignore-error-status t))
